@@ -1,0 +1,41 @@
+body{
+    background-color: orange;
+}
+
+#container{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    display: flex;
+}
+
+#greenBox, #redBox, #blueBox, #goldBox{
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: -100px;
+}
+
+#redBox{
+    background-color: red;
+    margin-left: 300px;
+}
+#blueBox{
+    background-color: blue;
+    margin-left: -200px;
+}
+#goldBox{
+    background-color: gold;
+    margin-left: -200px;
+}
+#greenBox{
+    background-color: green;
+    margin-left: -200px;
+}
+
+h1{
+    margin-top: -8px;
+    border: 1px black solid;
+    padding: 10px;
+}
+

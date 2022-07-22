@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMS Display Tickets</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/display.css">
+</head>
+<body>
+
+    <div class="content">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../pages/ticket_table.html" aria-current="page">View Tickets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/ticket_form.html">Submit A Ticket</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <h1>Tickets for ${loggedIn.getName()}</h1>
+        <p>If you are logged in as an admin, you see all tickets and get a link on an employee name to see all tickets for that employee and a link on each customer to see the tickets for that customer<br>
+            Employees see the tickets assigned to themselves<br>
+            Customers see the tickets they have submitted<br>
+            Results are ordered by status > priority > submission date
+        </p>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">Employee</th>
+                    <th scope="col">Ticket Number</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Submission Date</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6">c:forEach var="ticket" items="${TICKET_LIST}"</td>
+                </tr>
+                <tr>
+                    <td scope="row">${ticket.getEmployee().getName()}</td>
+                    <td><a href="#">${ticket.getId()}</a></td>
+                    <td>${ticket.getCustomer().getName()}</td>
+                    <td>${ticket.getCreatedAt()}</td>
+                    <td>${ticket.getPriority()}</td>
+                    <td>${ticket.getStatus()}</td>
+                </tr>
+                <tr>
+                    <td scope="row">Tim Granger</td>
+                    <td><a href="#">1128730</a></td>
+                    <td>Steve Jobs</td>
+                    <td>03/05/2011</td>
+                    <td>Immediately!!!</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td scope="row">Tim Granger</td>
+                    <td><a href="#">1128523840</a></td>
+                    <td>Bill Gates</td>
+                    <td>10/10/2020</td>
+                    <td>Whenever</td>
+                    <td>In Progress</td>
+                </tr>
+                <tr>
+                    <td scope="row">Tim Granger</td>
+                    <td><a href="#">83753</a></td>
+                    <td>The Google Guy</td>
+                    <td>09/04/1998</td>
+                    <td>Soon™</td>
+                    <td>Completed</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body>
+</html>

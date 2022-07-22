@@ -1,0 +1,74 @@
+body{
+    background-image: url("https://media.istockphoto.com/vectors/flag-vector-stars-and-stripes-old-glory-vector-id1163474492?k=20&m=1163474492&s=612x612&w=0&h=0bbkspWqGN_XOYD-9mA5b6HYFsPSDgCQqIiHKoUE5b0=");
+    background-size: 200px;
+}
+
+table{
+    border-collapse: collapse;
+    text-align: center;
+    background-color: white;
+    color: red;
+}
+
+/* selector list */
+td, tr, th{
+    padding: 10px;
+    border: 1px solid black;
+}
+
+/* descendant combinator */
+table caption{
+    color: blue;
+    margin-bottom: 8px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: white;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+/* child combinator */
+tr>th{
+    color: red;
+}
+
+/* pseudo-class combinator */
+td:hover{
+    background-color: blue;
+}
+
+/* class selector */
+.tableLink:link{
+    color: red;
+}
+.tableLink:visited{
+    color: pink;
+}
+
+/* pseudo element */
+p::first-line{
+    color: blue;
+}
+h2::first-line{
+    color: blue;
+}
+
+h2::after{
+    content: "!!";
+    color: red;
+}
+
+h2, h3, p{
+    background-color: white;
+}
+
+h2{
+    color:red;
+}
+
+h3{
+    color: blue;
+}
+p{
+    color: red;
+}
